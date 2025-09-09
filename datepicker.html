@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var myBirthday = "01/01/2025";
+            $("#date-picker-field").datepicker({
+                showAnim: "fadeIn",
+                dateFormat: "mm/dd/yy",
+                onSelect: function (selectedDate) {
+                    if (selectedDate === myBirthday) {
+                        $("#my-paragraph").slideDown();
+                    } else {
+                        $("#my-paragraph").hide();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="date-picker-field" placeholder="Select Date">
+    <p id="my-paragraph" style="display: none;">happy birthday</p>
+</body>
+
+</html>
